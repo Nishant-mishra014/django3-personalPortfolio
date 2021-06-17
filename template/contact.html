@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}Contact Us{% endblock title %}
+
+{% comment %} {% block title %}Contact Us{% endblock title %} {% endcomment %}
+{% block content %}
+<div class="container-fluid px-0 mx-0">
+<img src="https://source.unsplash.com/1300x400/?contact"></img>
+</div>
+
+<h2 class="text-center">Contact Us</h2>
+<div class="container">
+<form method="post" action="/contact">
+{% csrf_token %}
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input type="name" class="form-control" id="name" name="name" placeholder="Enter your name">
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your e-mail">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+
+  <div class="mb-3">
+    <label for="phone" class="form-label">Phone Number</label>
+    <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter your phone no.">
+  </div>
+
+  <div class="mb-3">
+    <label for="desc" class="form-label">Reason</label>
+    <textarea class="form-control" id="desc" rows="3" name="desc"></textarea>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+{% endblock  %}
+ 
+ 
